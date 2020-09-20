@@ -2,7 +2,18 @@
 __pycache__/
 *.py[cod]
 *$py.class
+social_env/
 
+/blog_env
+/.idea
+/venv
+/.venv
+/.vscode
+/static
+/Django_blog/Django_blog/settings_local.py
+Django_blog/settings_local.py
+/portal/console/mssql_conf.py
+/uploads
 # C extensions
 *.so
 
