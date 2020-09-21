@@ -28,6 +28,9 @@ SECRET_KEY = 'l+!+#==j+-uz4)@@2640jv2t^qj4p+q2w-l9fp3zoj^xdv!-3%'
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 # Application definition
 
