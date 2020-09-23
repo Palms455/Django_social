@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import Profile
+
 
 class LoginForm(forms.Form):
     # форма авторизации
@@ -21,4 +23,12 @@ class UserRegistrationForm(forms.ModelForm):
         return cd['password2']
 # или UserCreationForm - готовая форма
 
+class UserEditForm(forms.Form):
+    class Meta:
+        model = User
+        fields = ('first_name', 'las_name', 'email')
 
+class ProfileEditForm(forms.Form):
+    class Meta:
+        model = Profile
+        fields = ('date_of_birth', 'photo')
