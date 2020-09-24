@@ -7,6 +7,17 @@
  </head>
  <body>
  <div id="header">
+  <!--Уведомления-->
+  {% if messages %}
+  <ul class="messages">
+   {% for message in messages %}
+   <li class="{{ message.tags }}">
+    {{ message|safe }}
+    <a href="#" class="close"></a>
+   </li>
+   {% endfor %}
+  </ul>
+  {% endif %}
  <span class="logo">Social</span>
    {% if request.user.is_authenticated %}
  <ul class="menu">

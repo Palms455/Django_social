@@ -23,12 +23,14 @@ class UserRegistrationForm(forms.ModelForm):
         return cd['password2']
 # или UserCreationForm - готовая форма
 
-class UserEditForm(forms.Form):
+
+class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('first_name', 'las_name', 'email')
+        fields = ('first_name', 'last_name', 'email')
 
-class ProfileEditForm(forms.Form):
+
+class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('date_of_birth', 'photo')
