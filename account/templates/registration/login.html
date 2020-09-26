@@ -5,7 +5,7 @@
  {% if form.errors %}
  <p>Неверный логин или пароль.</p>
  {% else %}
- <p>Используте форму для входа. Если у Вас нет аккаунта регистрация <a href=""{% url 'register' %}>здесь</a></p>
+ <p>Используте форму для входа. Если у Вас нет аккаунта регистрация <a href="{% url 'register' %}">здесь</a></p>
  {% endif %}
  <div class="login-form">
  <form action="{% url 'login' %}" method="post">
@@ -15,4 +15,18 @@
  <p><input type="submit" value="Вход"></p>
  </form>
  </div>
+<div class="social">
+ <ul>
+ <li class="facebook"><a href="{% url "social:begin" "facebook" %}">
+ Войти через Facebook</a></li>
+  <li class="twitter">
+ <a href="{% url "social:begin" "twitter" %}">Войти через Twitter</a>
+</li>
+  <li class="google">
+ <a href="{% url "social:begin" "google-oauth2" %}">
+ Войти через Google
+ </a>
+</li>
+ </ul>
+</div>
 {% endblock %}

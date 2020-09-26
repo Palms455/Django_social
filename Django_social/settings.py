@@ -26,7 +26,7 @@ SECRET_KEY = 'l+!+#==j+-uz4)@@2640jv2t^qj4p+q2w-l9fp3zoj^xdv!-3%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
@@ -36,6 +36,7 @@ LOGOUT_URL = 'logout'
 
 INSTALLED_APPS = [
     'account',
+    'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,8 +77,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Django_social.wsgi.application'
 
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2'
+]
 
+SOCIAL_AUTH_FACEBOOK_KEY = 'XXX' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'XXX' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email'] # give email from facebook profile
 
+SOCIAL_AUTH_TWITTER_KEY = 'XXX' # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'XXX' # Twitter Consumer Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'XXX' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXX' # Google Consumer Secret
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
