@@ -16,7 +16,7 @@ Django_blog/settings_local.py
 /uploads
 # C extensions
 *.so
-
+media/
 # Distribution / packaging
 .Python
 build/

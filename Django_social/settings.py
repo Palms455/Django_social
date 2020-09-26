@@ -26,7 +26,12 @@ SECRET_KEY = 'l+!+#==j+-uz4)@@2640jv2t^qj4p+q2w-l9fp3zoj^xdv!-3%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'mysite.com',
+    'localhost',
+    '127.0.0.1',
+    '1a110c0f21b6.ngrok.io',
+]
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
@@ -35,14 +40,14 @@ LOGOUT_URL = 'logout'
 # Application definition
 
 INSTALLED_APPS = [
-    'account',
-    'social_django',
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'images'
 
 ]
@@ -135,3 +140,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
