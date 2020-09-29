@@ -13,10 +13,18 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from .settings_local import DEBUG, DATABASES
 import os
 from pathlib import Path
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
+'''Django динамически добавляет метод get_absolute_url() для каждой модели,
+перечисленной в настройке ABSOLUTE_URL_OVERRIDES. В этом случае из настройки
+будет возвращаться соответствующий модели URL'''
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -38,6 +46,8 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 # Application definition
+
+
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
