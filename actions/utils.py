@@ -3,6 +3,8 @@ from .models import Action
 import datetime
 from django.utils import timezone
 
+
+
 def create_action(user, verb, target=None):
     """создание активности и связывание с объектом target"""
     # Поиск похожего действия, совершенного за последнюю минуту.
