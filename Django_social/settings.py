@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from .settings_local import DEBUG, DATABASES
+from .settings_local import DEBUG, DATABASES, REDIS_HOST, REDIS_PORT, REDIS_DB
 import os
 from pathlib import Path
 from django.urls import reverse_lazy

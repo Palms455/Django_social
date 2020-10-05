@@ -18,3 +18,6 @@ DATABASES = {
 EMAIL_HOST_USER = 'palms1990@gmail.com'
 EMAIL_HOST_PASSWORD = 'feldsher3301344'
 
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
